@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <style>
+    h5 {
+      color: blue;
+    }
+  </style>
+  <title>Heritage Restaurant</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Heritage Restaurant</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="./../../index.html">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="../About/index.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./../Menu/Index.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./../Services/index.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./../Gallery/Index.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./../Order/Index.html">Place Order</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Contact Us<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="list-group">
+    <a class="list-group-item w-100 flex-column align-items-start navbar-brand" href="#">Contact Us</a>
+
+    <div class="card w-100">
+      <div class="card-body">
+        <h5 class="card-title">Harjeet Dahley</h5>
+        <p class="card-text">
+          Restaurant : Heritage Restaurant
+        </p>
+        <p class="card-text">
+          Mobile : +919999999999
+        </p>
+        <p class="card-text">
+          Email : xyz@gmail.com
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpe2spShgjCJMPyokNNktU9g0-Lcyv2A4"></script>
+  <div>
+    <div id="gmap_canvas" style="height:400px;width:100%;"></div>
+  </div>
+  <a href="https://embedmaps.org/">. </a>
+  <script type="text/javascript"
+    src="https://embedmaps.com/google-maps-authorization/script.js?id=e8d5b311a0872f60429f8ca2d1e8beff8bcfe364"></script>
+  <script type="text/javascript">
+    function init_map() {
+      var myOptions = {
+        zoom: 10,
+        center: new google.maps.LatLng(43.3899, 80.4053),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      map = new google.maps.Map(
+        document.getElementById('gmap_canvas'),
+        myOptions
+      );
+      marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(51.5266, -0.0798)
+      });
+      infowindow = new google.maps.InfoWindow({
+        content:
+          '<strong>Heritage Restaurant</strong><br>299 Soreditch Canada,<br>  Kitchener, ON N2G 4M4, Canada<br>'
+      });
+      google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+      });
+      infowindow.open(map, marker);
+    }
+    google.maps.event.addDomListener(window, 'load', init_map);
+  </script>
+
+</body>
+
+</html>
